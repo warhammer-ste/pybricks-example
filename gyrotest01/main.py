@@ -30,6 +30,8 @@ ev3.speaker.say("I will overthrow the government soon.") # Obligatory overthrow 
 while True: # This can be removed if wanted, I have it so I can set up the robot.
     ev3.screen.print("Press CENTER")
     ev3.screen.print("to start program.")
+    wait(cleardelay)
+    ev3.screen.clear()
     if Button.CENTER in ev3.buttons.pressed():
         ev3.speaker.beep()
         break
