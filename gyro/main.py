@@ -25,7 +25,10 @@ fontnormal = Font(size=21) # It's not the exact default, but it's as close as I 
 fontsmall = Font(size=13)
 def nodefine():
     print("Button unassigned. Please view source code.")
-    wait(buttondelay) # Buttondelay because it will automatically clear itself.
+    ev3.screen.print("Button unassigned.")
+    ev3.screen.print("Please view source")
+    ev3.screen.print("code.")
+    wait(500) # Custom wait so user can read text.
     # This function could be cleared if you wanted to. It's a remnant from when all buttons weren't defined.
     # It's still used for that, and if I were to undefine a button I'd still use this
 def clearallvariables():
@@ -50,6 +53,7 @@ while True:
         print("Current speed:", gyroboy.speed())
         ev3.screen.print(">")
         ev3.screen.print("Current speed:", gyroboy.speed())
+        ev3.screen.print("CENTER exits testing.")
         wait(cleardelay)
         ev3.screen.clear()
     elif angledirection == 1:
@@ -71,6 +75,8 @@ while True:
         ev3.screen.print("Current angle:", gyroboy.angle())
         ev3.screen.print("DOWN sets to 0.")
         ev3.screen.print("LEFT sets to 90.")
+        ev3.screen.print("CENTER exits testing.")
+        # The sets are basically just for debugging and resetting generic values.
         wait(cleardelay)
         ev3.screen.clear()
 # ---------------------- BUTTONS -------------------------- #
@@ -84,11 +90,11 @@ while True:
         ev3.screen.set_font(fontnormal)
         printspeed = 1
         wait(buttondelay)
-    elif Button.CENTER in ev3.buttons.pressed():
+    elif Button.DOWN in ev3.buttons.pressed():
         nodefine() # Undefined button.
     elif Button.LEFT in ev3.buttons.pressed():
         nodefine()
-    elif Button.DOWN in ev3.buttons.pressed():
+    elif Button.CENTER in ev3.buttons.pressed():
         clearallvariables() # Calls to reset all sensors incase it's used for debug.
         break
 # ---------------------- SCREEN --------------------------- #
@@ -103,3 +109,6 @@ while True:
         wait(cleardelay)
         ev3.screen.set_font(fontnormal)
         ev3.screen.clear()
+ev3.speaker.say("You have exited the loop.")
+ev3.speaker.say("I will overthrow the government soon.")
+# End of Program.
