@@ -35,12 +35,11 @@ while True: # This can be removed if wanted, I have it so I can set up the robot
     if Button.CENTER in ev3.buttons.pressed():
         ev3.speaker.beep()
         break
-
 while True:
     angle_deez_nutz.reset_angle(0)
     howthehelldoyoudrive.drive(150,0)
     if beueueu_laserbeam.distance() <= 300:
         while angle_deez_nutz.angle() <= 90:
             print(angle_deez_nutz.angle())
-            howthehelldoyoudrive.drive(0,-150)
+            howthehelldoyoudrive.drive(-200,-150)
             wait(250) # Waiting to make sure the obstacle is gone.
