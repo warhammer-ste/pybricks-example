@@ -52,7 +52,6 @@ while True:
     #     wait(200)
     elif mewanttempies == 0:
         eviltempies()
-        wait(200)
 evilfuckingtempies() # Runs to define evilfuckingtempies if not ran already
 # while True:
 #     printtempies()
