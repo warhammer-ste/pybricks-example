@@ -21,7 +21,7 @@ mewanttempies = 0
 #     ev3.screen.print(theProbe.temperature())
 #     wait(200)
 #     ev3.screen.clear()
-def eviltempies():
+def evilasstempies():
     evilfuckingtempies = round(theProbe.temperature()) # Default value for referencing temp
     eviltempies = evilfuckingtempies - roomtemp # Value to reference temp changed by roomtemp
     print("eviltempies", evilfuckingtempies)
@@ -51,17 +51,17 @@ while True:
     #     printtempies()
     #     wait(200)
     elif mewanttempies == 0:
-        eviltempies()
-evilfuckingtempies() # Runs to define evilfuckingtempies if not ran already
-# while True:
-#     printtempies()
-#     if tempies <= 10:
-#         print("#2")
-#         ev3.speaker.say("Cold!")
-#         ev3.screen.print("Cold!")
-#         printtempies()
-#     elif tempies >= 30:
-#         print("#2")
-#         ev3.speaker.say("Hands off.")
-#         ev3.screen.print("Warm!")
-#         printtempies()
+        evilasstempies()
+
+while True:
+    evilasstempies()
+    if eviltempies <= 10:
+        print("#2")
+        ev3.speaker.say("Cold!")
+        ev3.screen.print("Cold!")
+        evilasstempies()
+    elif eviltempies >= 30:
+        print("#2")
+        ev3.speaker.say("Hands off.")
+        ev3.screen.print("Warm!")
+        evilasstempies()
