@@ -2,7 +2,7 @@
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import (Motor, TouchSensor, ColorSensor,
                                  InfraredSensor, UltrasonicSensor, GyroSensor)
-from pybricks.nxtdevices import (TemperatureSensor) # This line is necessary for NXT devices.
+from pybricks.nxtdevices import (TemperatureSensor, SoundSensor, EnergyMeter, VernierAdapter) # This line is necessary for NXT devices
 from pybricks.parameters import Port, Stop, Direction, Button, Color
 from pybricks.tools import wait, StopWatch, DataLog
 from pybricks.robotics import DriveBase
@@ -20,15 +20,20 @@ def printtempies():
     ev3.screen.print(theProbe.temperature())
     wait(200)
     ev3.screen.clear()
-
+while True:
+    printtempies()
+    if Button.CENTER in ev3.buttons.pressed():
+        break
 
 while True:
     printtempies()
     if tempies <= 10:
-        ev3.speaker.say("Cold!")
+        print("#2")
+        ev3.speaker.say("Cold")
         ev3.screen.print("Cold!")
         printtempies()
-    elif tempies >= 30
-        ev3.speaker.say("Warm!")
+    elif tempies >= 30:
+        print("#2")
+        ev3.speaker.say("Warm")
         ev3.screen.print("Warm!")
         printtempies()
