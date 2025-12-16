@@ -26,22 +26,25 @@ def wiper():
     wait(200)
     ev3.screen.clear()
 
-ev3.speaker.beep() # Obligatory speaker beep
-sacrificespeed = 500 # Not necessary, just didn't wanna change two values manually cuz I'm lazy
+ev3.speaker.beep()
+sacrificespeed = 500
 
-while True: # Values assume your room temperature is around 20-22 C
+while True:
     eviltempies = round(theProbe.temperature())
+    ev3.light.on(Color.GREEN)
     if eviltempies <= 15:
+        ev3.light.on(Color.YELLOW)
         sacrifice.run(sacrificespeed)
         print(eviltempies, "Cold")
-        # ev3.speaker.say("Cold")
         ev3.screen.print("Cold!")
+        ev3.speaker.say("Cold")
         wiper()
     elif eviltempies >= 25:
+        ev3.light.on(Color.RED)
         sacrifice.run(-sacrificespeed)
         print(eviltempies, "Warm")
-        # ev3.speaker.say("Warm")
         ev3.screen.print("Warm!")
+        ev3.speaker.say("Warm")
         wiper()
     else:
         sacrifice.stop()
