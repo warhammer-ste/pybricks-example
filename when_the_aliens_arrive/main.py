@@ -32,7 +32,6 @@ def wiper():
     ev3.screen.clear()
 
 sacrificespeed = 150
-run_task(tempiesdefine())
 ev3.speaker.beep()
 
 while True:
