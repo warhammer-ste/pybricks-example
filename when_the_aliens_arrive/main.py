@@ -17,21 +17,19 @@ sacrifice = Motor(Port.A) # Third evil motor that does usually nothing
 theProbe = TemperatureSensor(Port.S1)
 LARGER_LARGER = Font(size=300)
 def evilasstempies():
-    ev3.screen.set_font(LARGER_LARGER)
     eviltempies = round(theProbe.temperature()) # Default value for referencing temp
     print("eviltempies", eviltempies)
-    print("realtempies", theProbe.temperature())
     ev3.screen.print(eviltempies)
     wait(200)
     ev3.screen.clear()
 def wiper():
-    ev3.screen.set_font(LARGER_LARGER)
     eviltempies = round(theProbe.temperature())
     ev3.screen.print(eviltempies)
     wait(200)
     ev3.screen.clear()
 
 sacrificespeed = 150
+ev3.screen.set_font(LARGER_LARGER)
 ev3.speaker.beep()
 
 while True:
@@ -51,4 +49,5 @@ while True:
         wiper()
     else:
         sacrifice.stop()
+        ev3.screen.print("Lukewarm")
         evilasstempies()
