@@ -10,26 +10,29 @@ from pybricks.media.ev3dev import SoundFile, ImageFile
 from pybricks.media.ev3dev import Font
 
 ev3 = EV3Brick()
-left_thing_that_runs = Motor(Port.C)
-right_motor = Motor(Port.B)
+# left_thing_that_runs = Motor(Port.C)
+# right_motor = Motor(Port.B)
+# creek4win = DriveBase(left_thing_that_runs, right_motor, wheel_diameter=57.15, axle_track=88.9)
 sacrifice = Motor(Port.A) # Third evil motor that does usually nothing
-creek4win = DriveBase(left_thing_that_runs, right_motor, wheel_diameter=57.15, axle_track=88.9)
 theProbe = TemperatureSensor(Port.S1)
-LARGER_LARGER = Font(size=30)
+LARGER_LARGER = Font(size=300)
 def evilasstempies():
+    ev3.screen.set_font(LARGER_LARGER)
     eviltempies = round(theProbe.temperature()) # Default value for referencing temp
     print("eviltempies", eviltempies)
+    print("realtempies", theProbe.temperature())
     ev3.screen.print(eviltempies)
     wait(200)
     ev3.screen.clear()
 def wiper():
+    ev3.screen.set_font(LARGER_LARGER)
     eviltempies = round(theProbe.temperature())
     ev3.screen.print(eviltempies)
     wait(200)
     ev3.screen.clear()
 
 sacrificespeed = 150
-ev3.screen.set_font(LARGER_LARGER)
+run_task(tempiesdefine())
 ev3.speaker.beep()
 
 while True:
