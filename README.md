@@ -1,3 +1,7 @@
+This branch will not be updated any further and no pull requests will be accepted regarding this branch.
+Please refer to the other 25-26 branch. This is kept purely for history purposes, and observing past progress.
+Previously the main & only branch.
+
 # pybricks-example
 All of these programs are written to be run on a LEGO Brick using EV3 MicroPython v2.0 (otherwise LEGO's ev3dev)
 
