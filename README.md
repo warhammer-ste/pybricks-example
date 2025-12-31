@@ -18,14 +18,3 @@ EV3's extension in VCS.
   - Just search up EV3 in the extensions tab. You are looking for the extension made by "LEGO® Education"
 
 Despite the program stating that it is MicroPython, you should have a baseline of Python knowledge (or really good research skills) as it doesn't differ extremely from Python.
-
-# Semi-EOL
-Or, in other words, end of active updates.
-As a result of life & my class ending soon regardless, I am unable to reliably push updates.
-To any future students or internet divers, I will still be happy to try answering any questions.
-This repository is not going to be archived. The outline is basically;
-- look for a virtual emulator of the ev3dev environment (what this code is based off)
-- create a new branch, leave original branch untouched
-- have it as a passive project & make random programs that aren't useful, but just for self-teaching.
-
-I will never private or delete this github. However, I will probably archive it once I get to a point where I will no longer spend any time occasionally coming back.
